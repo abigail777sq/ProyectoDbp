@@ -1,0 +1,46 @@
+Configuración de archivos
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── demo  
+|   |   |               └── DemoApplication.java  
+|   |   |               └── Dto
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               └── Clases
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               └── Service
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               └── Repository
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               └── Controller
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               |      └── .java
+|   |   |               └── Segurity
+|   |   |                      └── .java
+|   |   |                      └── .java
+|   |   |                      └── .java
+|   |   |                       
+|   |   |               
+|   |   |                      
+│   │   └── resources
+│   │       └── application.properties 
+│   └── test
+│       └── java
+│           └── com
+│               └── example
+│                   └── demo
+│                       └── DemoApplicationTests.java  (Pruebas unitarias)
+├── .gitignore  (Especifica archivos a ignorar en el control de versiones)
+├── pom.xml  (Archivo de construcción y dependencias de Maven)
+├── mvnw  (Herramienta de envoltura de Maven que asegura la versión correcta de Maven sin requerir su instalación)
