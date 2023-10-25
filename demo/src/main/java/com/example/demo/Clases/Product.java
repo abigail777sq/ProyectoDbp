@@ -18,7 +18,7 @@ public class Product implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    private int productId;
+    private Long productId;
 
    
     private String productName;
@@ -48,11 +48,11 @@ public class Product implements Serializable{
         this.productImage = productImage;
     }
 
-    public int getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 

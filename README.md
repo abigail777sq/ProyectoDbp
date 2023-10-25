@@ -67,13 +67,12 @@ User
 | enabled  | Boolean       | Indica si la cuenta de usuario está habilitada o deshabilitada. |
 
 
-### User
+### Orden
 Orden
-
 | Atributo  | Tipo de Dato | Descripción                                                  |
 |-----------|---------------|--------------------------------------------------------------|
-| userId    | int           | Identificador único para la orden.                           |
-| product   | Product       | Producto asociado a la orden (relación muchos a uno).        |
+| userId    | int           | Identificador del usuario único para la orden.                           |
+| product   | Product       | Producto asociado a la orden (relación uno a muchos).        |
 | quantity  | int           | Cantidad de productos en la orden.                            |
 | totalPrice| double        | Precio total de la orden (puede incluir impuestos y descuentos). |
 
@@ -86,21 +85,20 @@ Orden
 | productCategory      | String               | Categoría a la que pertenece el producto.                         |
 | productDescription   | String               | Descripción detallada del producto.                               |
 | productPrice         | double               | Precio del producto.                                             |
-| productCondition     | String               | Condición del producto (nuevo, usado, etc.).                      |
 | productStatus        | String               | Estado del producto (disponible, agotado, etc.).                  |
 | unitInStock          | int                  | Cantidad de unidades en stock del producto.                       |
 | productManufacturer  | String               | Nombre del fabricante o fabrica del producto.                     |
 | productImage         | MultipartFile        | Archivo de imagen del producto (puede ser nulo si no hay imagen).  |
 
+// ver
+### Carta
 
-### CartaItem
-
-| Atributo          | Tipo de Dato   | Descripción                                           |
+| Atributo          | Tipo de Dato    | Descripción                                           |
 |-------------------|-----------------|-------------------------------------------------------|
-| CartaItemId       | int             | Identificador único para el ítem de la carta.         |
-| name              | String          | Nombre del ítem de la carta.                           |
+| CartaId           | int             | Identificador único para el ítem de la carta.         |
 | Description       | String          | Descripción del ítem de la carta.                      |
 | lista_productos   | List\<Product\> | Lista de productos asociados al ítem de la carta.      |
+
 
 
 ## link al modelo entidad relacion :
