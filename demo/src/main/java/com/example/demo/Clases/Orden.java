@@ -14,7 +14,7 @@ public class Orden {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @OneToOne
-    private int userId;
+    private long userId;
     
     @OneToMany
     @JoinColumn(name = "productId")
@@ -27,11 +27,11 @@ public class Orden {
     private int quantity;
     private double totalPrice;
 
-    public int getuserId() {
+    public long  getuserId() {
         return userId;
     }
 
-    public void setuserId(int userId_) {
+    public void setuserId(long userId_) {
         userId = userId_;
     }
 

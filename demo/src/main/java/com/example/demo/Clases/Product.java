@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 
 import org.springframework.web.multipart.MultipartFile;
 
-//creo q deberia ir un manu to one para q jva pueda hacer un join 
+//creo q deberia ir un many to one para q jva pueda hacer un join 
 
 @Entity
 public class Product {
