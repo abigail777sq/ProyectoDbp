@@ -7,14 +7,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import org.springframework.web.multipart.MultipartFile;
-import java.io.Serializable;
 
+//creo q deberia ir un manu to one para q jva pueda hacer un join 
 
 @Entity
-public class Product implements Serializable{
-
-    private static final long serialVersionUID = 5047192035446540275L;
-
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)

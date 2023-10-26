@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -15,7 +16,10 @@ public class User {
     private String username;
     private String password;
     private Boolean enabled;
+
+    @OneToOne(mappedBy = "user")//renzo puso esto pór q lo necesita 
     
+    private Orden orden;
 
     public int getUsersId() {
         return usersId;

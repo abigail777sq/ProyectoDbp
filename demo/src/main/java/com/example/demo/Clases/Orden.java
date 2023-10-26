@@ -1,4 +1,7 @@
 package com.example.demo.Clases;
+import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,6 +19,10 @@ public class Orden {
     @OneToMany
     @JoinColumn(name = "productId")
     private Product product;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "orden_id", referencedColumnName = "id")//preguntar a mateo 
+    private User user;
 
     private int quantity;
     private double totalPrice;
