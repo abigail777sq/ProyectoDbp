@@ -32,7 +32,7 @@
 |   |   |               |      └──OrdenRepository.java
 |   |   |               |      └──ProductRepository.java
 |   |   |               └── Controller
-|   |   |               |      └── .java
+|   |   |               |      └── OrdenController.java
 |   |   |               |      └── .java
 |   |   |               |      └── .java
 |   |   |               └── Segurity

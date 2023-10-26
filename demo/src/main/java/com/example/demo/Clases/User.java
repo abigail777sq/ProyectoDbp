@@ -1,5 +1,7 @@
 package com.example.demo.Clases;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,23 +12,23 @@ import jakarta.persistence.OneToOne;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private int usersId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     
     private String username;
     private String password;
     private Boolean enabled;
-
-    @OneToOne(mappedBy = "user")//renzo puso esto pór q lo necesita 
-    
-    private Orden orden;
+/////////////////////////////////////////////////7
+    @OneToOne(mappedBy = "user")
+    private Orden ordenes;
+//////////////////////////////////////////////7
 
     public int getUsersId() {
-        return usersId;
+        return id;
     }
 
     public void setUsersId(int usersId) {
-        this.usersId = usersId;
+        this.id = usersId;
     }
 
     public String getUsername() {
