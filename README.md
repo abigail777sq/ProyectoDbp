@@ -106,3 +106,8 @@ Orden
  https://drive.google.com/file/d/1tzzRZ-M-q2H5ZgDe2etSkiP-zm7TH_Kj/view?usp=sharing
 
 
+Algunas anotaciones:
+docker run --name postgres -e POSTGRES_PASSWORD=mypassword -p 5555:5555 -d postgres
+Esto escribelo en el terminal si quieres hacer tu contenedor en Docker.
+Le estas poniendo de nombre postgres, contraseña mypassword, conectando del puerto 5555 del contenedor al puerto 5555
+de tu computadora, y por ultimo se ejecutará en segundo plano.

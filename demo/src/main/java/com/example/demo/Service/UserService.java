@@ -12,8 +12,11 @@ public class UserService {
     UserRepository userRepository;
     
     public void saveUser(Usuarios Usuario) {
-    Usuarios usser=new Usuarios();
+        userRepository.save(Usuario);
+    }
 
+    public void deleteUser(Long id){
+        userRepository.deleteById(id);
     }
 
 }
