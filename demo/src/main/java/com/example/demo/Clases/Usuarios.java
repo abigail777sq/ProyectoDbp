@@ -2,6 +2,10 @@ package com.example.demo.Clases;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,34 +13,37 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 @Entity
-public class User {
-
+@JsonIdentityInfo(
+  generator = ObjectIdGenerators.PropertyGenerator.class, 
+  property = "id")
+public class Usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id", nullable = false)
+    private long id;
     
-    private String username;
+    private String Usuariosname;
     private String password;
     private Boolean enabled;
 /////////////////////////////////////////////////7
-    @OneToOne(mappedBy = "user")
-    private Orden ordenes;
+   /* @OneToOne(mappedBy = "Usuarios")
+    private Orden ordenes; */ 
 //////////////////////////////////////////////7
 
-    public int getUsersId() {
+    public long getUsuariossId() {
         return id;
     }
 
-    public void setUsersId(int usersId) {
-        this.id = usersId;
+    public void setUsuariossId(long UsuariossId) {
+        this.id = UsuariossId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsuariosname() {
+        return Usuariosname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsuariosname(String Usuariosname) {
+        this.Usuariosname = Usuariosname;
     }
 
     public String getPassword() {

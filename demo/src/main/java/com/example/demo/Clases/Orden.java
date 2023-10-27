@@ -3,6 +3,9 @@ import java.util.Set;
 
 import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,19 +17,22 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
+@JsonIdentityInfo(
+  generator = ObjectIdGenerators.PropertyGenerator.class, 
+  property = "id")
 public class Orden {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private Long id;
     
-    @OneToMany(mappedBy="Orden")
-    private Set <Product>  product;
+   /*  @OneToMany(mappedBy="Orden")
+    private Set <Product>  product;*/
 /////////////////////////////////////////////////////////
-    @OneToOne(cascade = CascadeType.ALL)
+   /* @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "orden_id", referencedColumnName = "id")//preguntar a mateo 
-    private User user;
+    private User user;*/ 
 /////////////////////////////////////////////////
     private int quantity;
     private double totalPrice;
@@ -41,13 +47,14 @@ public class Orden {
 
     
 
-    public Set<Product> getProduct() {
+    /*public Set<Product> getProduct() {
         return   product ;
     }
 
     public void setProduct(Set<Product> product_) {
         this.product = product;
     }
+*/
 
     public int getQuantity() {
         return quantity;

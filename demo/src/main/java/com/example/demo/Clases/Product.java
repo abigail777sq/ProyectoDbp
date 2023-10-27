@@ -1,7 +1,11 @@
 package com.example.demo.Clases;
 
 import com.example.demo.Clases.*;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -15,15 +19,19 @@ import org.springframework.web.multipart.MultipartFile;
 //creo q deberia ir un many to one para q jva pueda hacer un join 
 
 @Entity
+@JsonIdentityInfo(
+  generator = ObjectIdGenerators.PropertyGenerator.class, 
+  property = "id")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long productId;
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name="cart_id", nullable=false)
-    private Orden Orden;
+    private Orden Orden;*/ 
 
 
     
@@ -43,18 +51,6 @@ public class Product {
     private int unitInStock;
     private String productManufacturer;
 
-  
-    private MultipartFile productImage;
-
-   
-
-    public MultipartFile getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(MultipartFile productImage) {
-        this.productImage = productImage;
-    }
 
     public Long getProductId() {
         return productId;
