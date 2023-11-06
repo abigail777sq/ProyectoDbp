@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.usuario.domain.User;
 import com.example.demo.usuario.service.UserService;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 @RestController
 @RequestMapping("/hello")
 public class AuthorizationController {
