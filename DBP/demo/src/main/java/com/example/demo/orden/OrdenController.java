@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/orden")
+@CrossOrigin(origins = "*")
 public class OrdenController {
 
     @Autowired
