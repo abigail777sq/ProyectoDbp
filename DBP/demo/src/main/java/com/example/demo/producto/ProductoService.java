@@ -39,7 +39,7 @@ public class ProductoService{
 
 
     //patchear producto
-    public Optional<Producto> patchSong(Long id, Producto producto) {
+    public Optional<Producto> patchProducto(Long id, Producto producto) {
         Optional<Producto> optionalProducto = productoRepository.findById(id);
         if (optionalProducto.isPresent()) {
             Producto existingProducto = optionalProducto.get();

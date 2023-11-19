@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.orden.Orden;
 import com.example.demo.producto.Producto;
+import com.example.demo.reservas.Reservas;
 
 import java.util.Collection;
 import java.util.List;
@@ -29,6 +30,9 @@ public class User implements UserDetails {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Orden> orden;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Reservas reserva;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -68,6 +72,7 @@ public List<Orden> getOrden() {
 }
 public void setOrden(List<Orden> orden) {
     this.orden = orden;}
+
 
     @Override
     public boolean isAccountNonExpired() {
@@ -132,4 +137,9 @@ public void setOrden(List<Orden> orden) {
     public Object getId() {
         return null;
     }
+    public Reservas getReservas() {
+        return reserva;}
+        public void setReservas(Reservas reservas){
+           reserva = reservas;
+        }
 }

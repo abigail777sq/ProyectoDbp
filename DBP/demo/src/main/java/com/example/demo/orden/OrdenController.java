@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.producto.Producto;
 
 
 
@@ -57,6 +60,19 @@ public class OrdenController {
         }
     }
     
+//put 
+ @Secured({"ADMIN", "USER"})
+    @PutMapping("/{id}")
+    public ResponseEntity<Orden> updateReservas(@PathVariable Long id, @RequestBody Orden orden) {
+        Orden updateOrden = ordenService.updateOrden(id, orden);
+        if (updateOrden != null) {
+            return new ResponseEntity<>(updateOrden, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 
     @Secured({"ADMIN"})
     @DeleteMapping("/{id}")

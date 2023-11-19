@@ -2,10 +2,16 @@ package com.example.demo.producto;
 
 
 
+import java.util.List;
+
+import com.example.demo.orden.Orden;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Producto {
@@ -31,12 +37,13 @@ public class Producto {
 
   
     
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    List<Orden> orden;
    
     public Producto(){}
     
     public Producto(String productName, String productCategory, String productDescription, double productPrice,
-            String productCondition, String productStatus, int unitInStock, String productManufacturer) {
+            String productCondition, String productStatus, int unitInStock, String productManufacturer, List<Orden> orden) {
         this.productName = productName;
         this.productCategory = productCategory;
         this.productDescription = productDescription;
@@ -45,6 +52,7 @@ public class Producto {
         this.productStatus = productStatus;
         this.unitInStock = unitInStock;
         this.productManufacturer = productManufacturer;
+        this.orden=orden;
     }
 
     public Long getId() {
@@ -117,6 +125,14 @@ public class Producto {
 
     public void setProductManufacturer(String productManufacturer) {
         this.productManufacturer = productManufacturer;
+    }
+
+    public List<Orden> getOrden() {
+        return orden;
+    }
+
+    public void setOrden(List<Orden> orden) {
+        this.orden = orden;
     }
 
   
