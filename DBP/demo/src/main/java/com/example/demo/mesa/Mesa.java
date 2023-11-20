@@ -15,7 +15,7 @@ Long id;
 Long capacidad;
 @OneToOne(cascade = CascadeType.ALL)
 Reservas reserva;
-boolean libre;
+boolean libre;  
 
 public Mesa(){}
   
@@ -41,7 +41,7 @@ public void setCapacidad(Long capacidad) {
 public Reservas getReserva() {
     return reserva;
 }
-
+    
 
 public void setReserva(Reservas reserva) {
     this.reserva = reserva;

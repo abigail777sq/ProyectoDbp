@@ -58,5 +58,8 @@ public void setUser(User user) {
     this.user = user;
 }
 
+public void MesaEnReserva(Mesa mesa){
+this.mesa=mesa;
+mesa.setReserva(this);
 
-}
+}}
