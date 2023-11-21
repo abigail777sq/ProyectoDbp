@@ -16,9 +16,9 @@ public class MesaEnReservaController {
     MesaEnReservaService mesaEnReservaService;
      @Secured({"ADMIN", "USER"})
     @PostMapping
-    public ResponseEntity<String> ReservarMesasEnReserva(@RequestParam Long MesaId, @RequestParam Long reservaId){
+    public ResponseEntity<String> ReservarMesasEnReserva(@RequestParam Long MesaId, @RequestParam Long reservaId, @RequestParam String fecha){
         try {
-            mesaEnReservaService.MesaEnReserva(MesaId, reservaId);
+            mesaEnReservaService.MesaEnReserva(MesaId, reservaId,fecha) ;  
             return ResponseEntity.ok("Mesa reservada correctamente");
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());

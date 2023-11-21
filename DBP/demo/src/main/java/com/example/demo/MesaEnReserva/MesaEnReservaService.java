@@ -15,9 +15,10 @@ public class MesaEnReservaService {
     @Autowired
     private ReservasRepository reservaService;
 
-    public void MesaEnReserva(Long mesaId, Long resevaId){
+    public void MesaEnReserva(Long mesaId, Long resevaId, String fecha ){
         Mesa mesa= mesaService.findById(mesaId).orElseThrow(() -> new RuntimeException("Mesa no encontrada"));
         Reservas reservas= reservaService.findById(resevaId).orElseThrow(() -> new RuntimeException("Reserva no encontrada"));
+        reservas.setFecha(fecha);
         reservas.MesaEnReserva(mesa);
         reservaService.save(reservas);
     }
