@@ -1,5 +1,4 @@
 package com.example.demo.reservas;
-import java.util.Date;
 import com.example.demo.mesa.Mesa;
 import com.example.demo.usuario.domain.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -51,14 +50,15 @@ public void setMesa(Mesa mesa) {
 }
 
 public User getUser() {
-    return user;
+    return this.user;
 }
 
 public void setUser(User user) {
     this.user = user;
 }
-
+ 
 public void MesaEnReserva(Mesa mesa){
+mesa.setLibre(false);   
 this.mesa=mesa;
 mesa.setReserva(this);
 

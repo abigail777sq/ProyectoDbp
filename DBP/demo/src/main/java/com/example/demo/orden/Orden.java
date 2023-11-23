@@ -47,8 +47,6 @@ public Orden(){
         Id = userId_;
     }
 
-    
-
     public List<Producto> getProducto() {
         return Producto;
     }

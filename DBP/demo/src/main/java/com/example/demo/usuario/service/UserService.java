@@ -21,7 +21,7 @@ public class UserService {
     }
     
     public List<User> getEnabledUsers() {
-        return userRepository.findByHabilitado(true);  // Aquí, true indica que el usuario está habilitado.
+        return userRepository.findAll();  // Aquí, true indica que el usuario está habilitado.
     }
 
     public UserDetailsService userDetailsService() {
