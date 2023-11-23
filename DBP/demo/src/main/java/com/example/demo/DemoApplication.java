@@ -23,7 +23,7 @@ public class DemoApplication {
     public FilterRegistrationBean<CorsFilter> corsFilterRegistrationBean() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Para la aplicación web
+        config.setAllowedOrigins(Arrays.asList("*")); // Para la aplicación web
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         config.setAllowedHeaders(Arrays.asList("*"));
 
@@ -41,4 +41,5 @@ public class DemoApplication {
 
 	
 }
+
 
